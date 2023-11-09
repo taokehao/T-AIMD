@@ -49,4 +49,4 @@ print(grid.best_score_)
 best_estimator_ = grid.best_estimator_
 print("best_estimator_:")
 print(best_estimator_)
-joblib.dump(best_estimator_, './catboost_models/material_catboost.pkl')
+# joblib.dump(best_estimator_, './catboost_models/material_catboost.pkl')

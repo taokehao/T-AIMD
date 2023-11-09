@@ -9,7 +9,7 @@
 # from transformer import TransformerTS
 # from torch import nn
 #
-# checkpoint = torch.load('..\\model\\model600.tar')  # 先反序列化模型
+# checkpoint = torch.load('..\\cal-pre-data\\model600.tar')  # 先反序列化模型
 # total_loss = checkpoint['loss']
 # epoch = checkpoint['epoch']
 # print(total_loss, epoch)
@@ -82,7 +82,7 @@
 #                     dim_feedforward=dim_feedforward,
 #                     dropout=0.1).to(device)  # 设置模型参数
 #
-# checkpoint = torch.load('..\\model\\model600.tar')  # 先反序列化模型
+# checkpoint = torch.load('..\\cal-pre-data\\model600.tar')  # 先反序列化模型
 # net.load_state_dict(checkpoint['model_state_dict'])
 # net.eval()
 # prediction_ouput = []

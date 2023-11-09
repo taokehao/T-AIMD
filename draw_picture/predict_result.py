@@ -2,10 +2,10 @@ import joblib
 import numpy as np
 import csv
 
-model = joblib.load('catboost_models/400_material_catboost.pkl')
+model = joblib.load('../model/catboost_model.pkl')
 print(model)
-test_data = np.loadtxt("../data/feature_encoder_400+material.csv", delimiter=',')
-test_label = np.log10(np.loadtxt("../data/y_data.csv", delimiter=','))
+test_data = np.loadtxt("../test_data/jisuan/test_feature_encoder+material.csv", delimiter=',')
+test_label = np.log10(np.loadtxt("../test_data/jisuan/test_label.csv", delimiter=','))
 
 result = model.predict(test_data)
 print(result)
@@ -22,7 +22,6 @@ print("")
 #
 for i in result:
     newRow = [i]
-    csvFile = open("./400_material_catboost.csv", 'a', newline='', encoding='utf-8')
+    csvFile = open("./vae_material_catboost.csv", 'a', newline='', encoding='utf-8')
     writer = csv.writer(csvFile)
     writer.writerow(newRow)  # 数据写入文件中zz
-    csvFile.close()

@@ -1,11 +1,13 @@
 import joblib
 import numpy as np
 
-# model = joblib.load('../model/catboost_model.pkl')
-model = joblib.load('../draw_picture/catboost_models/InitialData_catboost.pkl')
+model = joblib.load('../draw_picture/catboost_models/transformer_catboost.pkl')
+# cal-pre-data = joblib.load('../draw_picture/catboost_models/InitialData_catboost.pkl')
 print(model)
-test_data = np.loadtxt("../test_data/tinghua/test_data.csv", delimiter=',')
-test_label = np.log10(np.loadtxt("../test_data/tinghua/test_label.csv", delimiter=','))
+print("请输入预测文件：")
+a = input()
+test_data = np.loadtxt("../test_data/" + str(a) + "/test_feature_encoder.csv", delimiter=',')
+test_label = np.log10(np.loadtxt("../test_data/" + str(a) + "/test_label.csv", delimiter=','))
 
 result = model.predict(test_data)
 print("真实值")

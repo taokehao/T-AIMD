@@ -5,21 +5,21 @@ import catboost as cat
 import joblib
 
 # 导入训练数据
-traindata = np.loadtxt("../data/feature_encoder_600+material.csv", delimiter=',')
+traindata = np.loadtxt("../data/feature_encoder_vae+material.csv", delimiter=',')
 trainlabel = np.log10(np.loadtxt("../data/y_data.csv", delimiter=','))
 
 print(traindata.shape, trainlabel.shape)
 
 # 分类器使用 xgboost
-model = cat.CatBoostRegressor(iterations=1200, max_depth=8, subsample=0.7)
+model = cat.CatBoostRegressor(iterations=1500)
 
 # 设定搜索的xgboost参数搜索范围，值搜索XGBoost的主要6个参数
 param_dist = {
     # 'iterations': range(1000, 1500, 100),
     # 'max_depth': range(5, 11, 1),
     # 'max_depth': range(8, 9, 1),
-    'learning_rate': np.linspace(0.02, 0.03, 2),
-    # 'subsample': np.linspace(0.7, 0.8, 2),
+    'learning_rate': np.linspace(0.01, 0.05, 2),
+    'subsample': np.linspace(0.7, 0.8, 2),
 
     # iterations=1500
 

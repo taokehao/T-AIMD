@@ -102,13 +102,13 @@ for epoch in range(start_epoch + 1, total_epoch):
             logging.info('Train Epoch:{}\tLoss:{:.9f}'.format(epoch, loss_epoch))
             if loss_epoch < total_loss:
                 total_loss = loss_epoch
-                # torch.save(model, '..\\model\\model97-2.pkl')  # save model
+                # torch.save(cal-pre-data, '..\\cal-pre-data\\model97-2.pkl')  # save cal-pre-data
                 torch.save({
                     'epoch': epoch,
                     'model_state_dict': net.state_dict(),
                     'optimizer_state_dict': optimizer.state_dict(),
                     'loss': total_loss
-                }, '..\\model\\model6.tar')  # save model
+                }, '..\\model\\model6.tar')  # save cal-pre-data
                 feature_encoder = feature_encoder_epoch.copy()
                 feature_encoder_epoch = []
 

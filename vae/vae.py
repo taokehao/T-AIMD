@@ -101,13 +101,13 @@ for epoch in range(num_epochs):
 
             if loss_epoch < total_loss:
                 total_loss = loss_epoch
-                # torch.save(model, '..\\model\\model97-2.pkl')  # save model
+                # torch.save(cal-pre-data, '..\\cal-pre-data\\model97-2.pkl')  # save cal-pre-data
                 torch.save({
                     'epoch': epoch,
                     'model_state_dict': model.state_dict(),
                     'optimizer_state_dict': optimizer.state_dict(),
                     'loss': total_loss
-                }, '..\\model\\model_vae_100.tar')  # save model
+                }, '..\\model\\model_vae_100.tar')  # save cal-pre-data
                 feature_encoder = feature_encoder_epoch.copy()
                 feature_encoder_epoch = []
 
